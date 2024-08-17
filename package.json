@@ -1,0 +1,43 @@
+{
+  "name": "temp-ext",
+  "displayName": "AI Powered Code Reviewer",
+  "publisher": "AvinashKrishnan",
+  "description": "A Code Reviewer extension",
+  "version": "0.1.1",
+  "type": "commonjs",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Krishnan-Avinash/Code-Reviewer"
+  },
+  "engines": {
+    "vscode": "^1.58.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onCommand:temp-ext.codeReviewer"
+  ],
+  "main": "./extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "temp-ext.codeReviewer",
+        "title": "Code Reviewer"
+      }
+    ]
+  },
+  "scripts": {
+    "pretest": "npm run lint",
+    "lint": "eslint src --ext js",
+    "test": "node ./out/test/runTest.js"
+  },
+  "devDependencies": {
+    "eslint": "^7.22.0",
+    "vscode-test": "^1.5.2"
+  },
+  "dependencies": {
+    "@google/generative-ai": "^0.12.0",
+    "dotenv": "^16.4.5"
+  }
+}
